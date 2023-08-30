@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {},
+  "scripts": {
+    "build:shared": "lerna run build --scope=shared",
+    "dev:web": "lerna run dev --scope=web",
+    "dev:mobile": "lerna run start --scope=ExampleApp"
+  },
+  "devDependencies": {
+    "lerna": "^7.2.0"
+  }
+}
