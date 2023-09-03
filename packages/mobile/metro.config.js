@@ -9,6 +9,7 @@ const path = require('path');
 const config = {
   resolver: {
     unstable_enableSymlinks: true, // Turn on symlink support
+    sourceExts: ['jsx', 'js', 'ts', 'tsx', 'cjs', 'json'],
   },
   watchFolders: [
     path.resolve(__dirname, '../../node_modules'),
