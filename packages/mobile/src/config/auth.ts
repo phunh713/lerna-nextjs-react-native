@@ -8,5 +8,5 @@ export const config: AuthConfiguration = {
   },
   clientId: constants.azure.MOBILE_CLIENT_ID ?? '',
   redirectUrl: constants.azure.MOBILE_REDIRECT_URL ?? '',
-  scopes: [`${constants.azure.MOBILE_CLIENT_ID} offline_access openid`],
+  scopes: ["openid", "offline_access", constants.azure.MOBILE_CLIENT_ID],
 };
