@@ -7,12 +7,11 @@ import {
   useColorScheme,
 } from 'react-native';
 
-import {ReduxProvider, initHttpClient, store, utils} from 'common';
-import Login from './src/screens/Login';
-import {refreshTokenFn} from './src/utils/token';
+import {ReduxProvider, initHttpClient, store, utils} from 'shared';
+import Todo from './src/components/Todos';
 const queryClient = new QueryClient();
 
-initHttpClient(() => utils.token.getAccessToken(store, refreshTokenFn));
+initHttpClient(() => utils.token.getAccessToken(store, () => {}));
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -22,7 +21,7 @@ function App(): JSX.Element {
         <SafeAreaView>
           <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
           <ScrollView contentInsetAdjustmentBehavior="automatic">
-            <Login />
+            <Todo />
           </ScrollView>
         </SafeAreaView>
       </ReduxProvider>

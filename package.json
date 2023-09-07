@@ -6,11 +6,11 @@
   ],
   "dependencies": {},
   "scripts": {
-    "build:common": "lerna run build --scope=common",
+    "build:shared": "lerna run build --scope=shared",
     "build:web": "lerna run build --scope=web",
     "dev:web": "lerna run dev --scope=web",
-    "dev:common": "lerna run start --scope=common",
-    "dev:mobile": "lerna run start --scope=ExampleApp"
+    "dev:shared": "lerna run start --scope=shared",
+    "dev:mobile": "lerna run start --scope=mobile"
   },
   "devDependencies": {
     "lerna": "^7.2.0"

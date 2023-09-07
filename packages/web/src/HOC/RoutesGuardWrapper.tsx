@@ -1,6 +1,6 @@
 "use client";
 
-import { config, useAppSelector } from "common";
+import { config, useAppSelector } from "shared";
 import { redirect, usePathname } from "next/navigation";
 import React, { FC, ReactNode } from "react";
 import intersecion from "lodash/intersection";
@@ -15,7 +15,7 @@ const RouteGuardWrapper: FC<{ children: ReactNode }> = ({ children }) => {
   const { accessToken, roles } = useAppSelector(
     (state) => state.authentication
   );
-  console.log({ pathname, accessToken });
+
   for (const item of config.routes.routesConfig) {
     if (item.path !== pathname) continue;
     if (item.type === "public") break;
@@ -24,7 +24,6 @@ const RouteGuardWrapper: FC<{ children: ReactNode }> = ({ children }) => {
       break;
     }
     if (item.type === "authenticated" && accessToken) {
-      console.log({ pathname, accessToken });
       if (item.roles.includes("*")) break;
       if (intersecion(item.roles, roles).length) break;
     }

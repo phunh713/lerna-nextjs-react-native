@@ -9,12 +9,15 @@ import {
   initHttpClient,
   store,
   utils,
-} from "common";
+} from "shared";
 import { SessionProvider } from "next-auth/react";
-import { refreshTokenFn } from "@/utils/token";
 
 // must init http client in client component. Don't know why yet
-initHttpClient(() => utils.token.getAccessToken(store, refreshTokenFn));
+initHttpClient(() =>
+  utils.token.getAccessToken(store, async () => {
+    return "";
+  })
+);
 
 const Configs: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

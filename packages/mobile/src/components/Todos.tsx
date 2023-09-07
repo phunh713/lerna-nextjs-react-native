@@ -1,8 +1,8 @@
-import {useTodos} from 'common';
+import {useTodos} from 'shared';
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const Welcome = () => {
+const Todo = () => {
   const {data} = useTodos();
 
   return data?.slice(0, 10).map(item => (
@@ -14,4 +14,4 @@ const Welcome = () => {
   ));
 };
 
-export default Welcome;
+export default Todo;

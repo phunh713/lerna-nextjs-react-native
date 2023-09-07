@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock lerna.json ./
 
-COPY ./packages/common/package.json ./packages/common/
+COPY ./packages/shared/package.json ./packages/shared/
 COPY ./packages/web/package.json ./packages/web/
 
 # lerna is devDependency => production should be false
@@ -17,7 +17,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY . /app
 
-RUN yarn build:common
+RUN yarn build:shared
 RUN yarn build:web
 
 RUN cd /app/packages/web/.next/standalone/packages/web

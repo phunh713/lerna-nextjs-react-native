@@ -1,5 +1,5 @@
 "use client";
-import { useTodos } from "common";
+import { useTodos } from "shared";
 import { FC } from "react";
 
 const Todos: FC = () => {

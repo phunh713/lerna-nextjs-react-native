@@ -1,9 +1,7 @@
-import React, { FC, ReactNode } from "react";
-import GetTokenWrapper from "./GetTokenWrapper";
-import RouteGuardWrapper from "./RoutesGuardWrapper";
+import { FC, ReactNode } from "react";
 
 const Wrappers: FC<{ children: ReactNode }> = ({ children }) => {
-  return <GetTokenWrapper>{children}</GetTokenWrapper>;
+  return children;
 };
 
 export default Wrappers;
