@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  Text,
   useColorScheme,
 } from 'react-native';
 
@@ -11,7 +12,11 @@ import {ReduxProvider, initHttpClient, store, utils} from 'shared';
 import Todo from './src/components/Todos';
 const queryClient = new QueryClient();
 
-initHttpClient(() => utils.token.getAccessToken(store, () => {}));
+initHttpClient(() =>
+  utils.token.getAccessToken(store, async () => {
+    return '';
+  }),
+);
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,6 +26,7 @@ function App(): JSX.Element {
         <SafeAreaView>
           <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
           <ScrollView contentInsetAdjustmentBehavior="automatic">
+            <Text>hehe</Text>
             <Todo />
           </ScrollView>
         </SafeAreaView>
