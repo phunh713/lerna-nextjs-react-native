@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {Text, View} from 'react-native';
 
 const Todo = () => {
-  const props = useTodos();
+  const {data} = useTodos();
   useEffect(() => {
     console.log('calling api');
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -18,7 +18,7 @@ const Todo = () => {
 
   return (
     <>
-      {props?.data?.slice(0, 10).map(item => (
+      {data?.slice(0, 10).map(item => (
         <View key={item.id}>
           <Text>
             id: {item.id} - title: {item.title}

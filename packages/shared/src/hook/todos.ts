@@ -6,8 +6,6 @@ export const useTodos = () => {
   return useQuery({
     queryKey: [TO_DOS],
     queryFn: getTodos,
-    select: (props) => {
-      return props;
-    },
+    select: ({ data }) => data,
   });
 };
