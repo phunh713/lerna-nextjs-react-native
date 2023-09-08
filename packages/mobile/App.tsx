@@ -26,7 +26,6 @@ function App(): JSX.Element {
         <SafeAreaView>
           <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
           <ScrollView contentInsetAdjustmentBehavior="automatic">
-            <Text>hehe</Text>
             <Todo />
           </ScrollView>
         </SafeAreaView>
